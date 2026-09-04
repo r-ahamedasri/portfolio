@@ -457,14 +457,14 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2 cursor-pointer"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 cursor-pointer md:bottom-8 md:gap-2"
         onClick={() =>
           document
             .getElementById("skills")
             ?.scrollIntoView({ behavior: "smooth" })
         }
       >
-        <span className="font-mono-tech text-yellow-600 text-xs tracking-widest uppercase">
+        <span className="hidden font-mono-tech text-yellow-600 text-xs tracking-widest uppercase md:inline">
           Scroll
         </span>
         <motion.div

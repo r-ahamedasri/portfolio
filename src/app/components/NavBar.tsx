@@ -64,7 +64,7 @@ export function NavBar() {
             : "bg-black/70 backdrop-blur-md border-b border-yellow-900/30 md:bg-transparent md:backdrop-blur-0 md:border-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between md:grid md:grid-cols-3 md:px-6 md:py-4">
 
           {/* Left: Logo */}
           <button
