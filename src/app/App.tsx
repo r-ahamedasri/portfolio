@@ -8,6 +8,7 @@ import { ContactSection } from "./components/ContactSection";
 import { NavBar } from "./components/NavBar";
 import { CustomCursor } from "./components/CustomCursor";
 import { ParticleCanvas } from "./components/ParticleCanvas";
+import { Analytics } from "@vercel/analytics/react";
 import logoSrc from "../imports/Logo.png";
 
 const BACKGROUND_CIRCLES = {
@@ -106,6 +107,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Analytics />
       <CustomCursor />
       <PageAtmosphere />
       <NavBar />
