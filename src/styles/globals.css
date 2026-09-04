@@ -44,11 +44,6 @@ html {
    ANIMATIONS
    ============================================================ */
 
-@keyframes background-circle-drift {
-  from { transform: translateY(-8px); }
-  to { transform: translateY(8px); }
-}
-
 /* --- Glitch Text --- */
 @keyframes glitch-clip-1 {
   0%, 90%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0); }

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { motion, useAnimation } from "motion/react";
+import { motion } from "motion/react";
 import { BadgeCheck, ExternalLink } from "lucide-react";
 
 interface Certificate {
@@ -74,31 +74,72 @@ function CertificateCard({ certificate }: { certificate: Certificate }) {
 }
 
 export function CertificationSection() {
-	const controls = useAnimation();
 	const railRef = useRef<HTMLDivElement>(null);
-	const pointerStart = useRef<{ x: number; currentX: number } | null>(null);
-	const movingBadges = [...BADGES, ...BADGES];
+	const firstGroupRef = useRef<HTMLDivElement>(null);
+	const position = useRef(0);
+	const cycleWidth = useRef(0);
+	const pointerStart = useRef<{ x: number; position: number } | null>(null);
+	const hovering = useRef(false);
+	const dragging = useRef(false);
+	const renderBadgeGroup = (key: string, attachRef = false) => (
+		<div key={key} ref={attachRef ? firstGroupRef : undefined} className="flex shrink-0 items-center gap-10">
+			{BADGES.map((badge) => <div key={badge.id} className="flex h-44 w-44 shrink-0 items-center justify-center border border-yellow-700/40 bg-foreground/[0.03] p-5"><img src={badge.image} alt="" className="h-full w-full object-contain" draggable="false" /></div>)}
+		</div>
+	);
 
 	useEffect(() => {
-		controls.start({ x: ["0%", "-50%"], transition: { duration: 20, ease: "linear", repeat: Infinity } });
-	}, [controls]);
+		const track = railRef.current;
+		const group = firstGroupRef.current;
+		if (!track || !group) return;
 
-	const resumeRail = () => controls.start({ x: "-50%", transition: { duration: 20, ease: "linear", repeat: Infinity } });
+		const updateCycle = () => {
+			cycleWidth.current = group.offsetWidth + 40;
+		};
+		const resizeObserver = new ResizeObserver(updateCycle);
+		resizeObserver.observe(group);
+		updateCycle();
+
+		let frame = 0;
+		let previousTime = performance.now();
+		const animate = (time: number) => {
+			const delta = Math.min(time - previousTime, 50);
+			previousTime = time;
+			if (!hovering.current && !dragging.current && cycleWidth.current) {
+				position.current -= (delta / 1000) * 32;
+				while (position.current <= -cycleWidth.current) position.current += cycleWidth.current;
+			}
+			track.style.transform = `translate3d(${position.current}px, 0, 0)`;
+			frame = requestAnimationFrame(animate);
+		};
+		frame = requestAnimationFrame(animate);
+		return () => {
+			cancelAnimationFrame(frame);
+			resizeObserver.disconnect();
+		};
+	}, []);
+
+	const wrapPosition = (value: number) => {
+		if (!cycleWidth.current) return value;
+		while (value <= -cycleWidth.current) value += cycleWidth.current;
+		while (value > 0) value -= cycleWidth.current;
+		return value;
+	};
 	const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
-		controls.stop();
+		dragging.current = true;
 		pointerStart.current = {
 			x: event.clientX,
-			currentX: (railRef.current?.getBoundingClientRect().left ?? 0) - (event.currentTarget.getBoundingClientRect().left ?? 0),
+			position: position.current,
 		};
 		event.currentTarget.setPointerCapture(event.pointerId);
 	};
 	const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
 		if (!pointerStart.current || !railRef.current) return;
 		const delta = event.clientX - pointerStart.current.x;
-		controls.set({ x: pointerStart.current.currentX + delta });
+		position.current = wrapPosition(pointerStart.current.position + delta);
 	};
 	const handlePointerUp = () => {
 		pointerStart.current = null;
+		dragging.current = false;
 	};
 
 	return (
@@ -140,13 +181,14 @@ export function CertificationSection() {
 					<div className="mb-5 flex items-center justify-between px-6">
 						<div className="flex items-center gap-3"><BadgeCheck className="text-yellow-400" size={20} /><h3 className="font-bebas text-3xl tracking-wide text-foreground">BADGES</h3><span className="font-mono-tech text-xs text-foreground/40">{BADGES.length} entries</span></div>
 					</div>
-					<div className="relative cursor-grab overflow-hidden py-8 active:cursor-grabbing" onMouseEnter={() => controls.stop()} onMouseLeave={resumeRail} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={handlePointerUp}>
+					<div className="relative cursor-grab overflow-hidden py-8 active:cursor-grabbing" onMouseEnter={() => { hovering.current = true; }} onMouseLeave={() => { hovering.current = false; }} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={handlePointerUp}>
 						<div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-600/60 to-transparent" />
 						<div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-600/60 to-transparent" />
 						<div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent" />
 						<div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent" />
-						<motion.div ref={railRef} animate={controls} className="flex w-max items-center gap-10 px-6">
-							{movingBadges.map((badge, index) => <div key={`${badge.id}-${index}`} className="flex h-44 w-44 shrink-0 items-center justify-center border border-yellow-700/40 bg-foreground/[0.03] p-5"><img src={badge.image} alt="" className="h-full w-full object-contain" draggable="false" /></div>)}
+						<motion.div ref={railRef} className="flex w-max items-center gap-10 px-6">
+							{renderBadgeGroup("badges-primary", true)}
+							{renderBadgeGroup("badges-copy")}
 						</motion.div>
 					</div>
 				</div>

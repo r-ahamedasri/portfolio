@@ -28,7 +28,7 @@ export function ParticleCanvas({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: -9999, y: -9999 });
   const particlesRef = useRef<Particle[]>([]);
-  const rafRef = useRef<number>();
+  const rafRef = useRef<number | undefined>(undefined);
   const frameRef = useRef(0);
 
   useEffect(() => {

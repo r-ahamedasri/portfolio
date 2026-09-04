@@ -124,7 +124,7 @@ export function NavBar() {
               className="hidden md:flex items-center gap-2 px-4 py-2 font-rajdhani uppercase tracking-widest text-sm font-semibold rounded-none border border-yellow-400/40 bg-white/10 text-yellow-300 backdrop-blur-md hover:bg-white/20 hover:border-yellow-300 transition-all duration-300"
               style={{ boxShadow: "0 0 16px rgba(234,179,8,0.18)" }}
             >
-              Contact
+              Let&apos;s Talk
             </button>
 
             <button

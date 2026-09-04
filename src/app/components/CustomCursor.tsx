@@ -8,7 +8,7 @@ export function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
   const pos = useRef({ x: 0, y: 0 });
   const ringPos = useRef({ x: 0, y: 0 });
-  const rafRef = useRef<number>();
+  const rafRef = useRef<number | undefined>(undefined);
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [visible, setVisible] = useState(false);
