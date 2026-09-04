@@ -1,11 +1,14 @@
 
-  # Interactive Cybersecurity Portfolio (Community)
+  # Interactive Cybersecurity Portfolio
 
-  This is a code bundle for Interactive Cybersecurity Portfolio (Community). The original project is available at https://www.figma.com/design/YGafRam1foyPQzREtbGIF0/Interactive-Cybersecurity-Portfolio--Community-.
+  A React and Vite portfolio website for showcasing cybersecurity skills, projects, certifications, education, and contact information.
 
-  ## Running the code
+  ## Development
 
-  Run `npm i` to install the dependencies.
+  ```bash
+  npm install
+  npm run dev
+  ```
 
-  Run `npm run dev` to start the development server.
+  Create a production build with `npm run build`.
   

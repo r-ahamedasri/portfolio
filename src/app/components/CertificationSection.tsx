@@ -104,8 +104,9 @@ export function CertificationSection() {
 	return (
 		<section
 			id="certifications"
-			className="relative overflow-hidden border-y border-yellow-900/30 bg-background py-32"
+			className="relative overflow-hidden bg-background py-32"
 		>
+			<div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-600 to-transparent opacity-60" />
 			<div className="relative mx-auto max-w-6xl">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -139,7 +140,9 @@ export function CertificationSection() {
 					<div className="mb-5 flex items-center justify-between px-6">
 						<div className="flex items-center gap-3"><BadgeCheck className="text-yellow-400" size={20} /><h3 className="font-bebas text-3xl tracking-wide text-foreground">BADGES</h3><span className="font-mono-tech text-xs text-foreground/40">{BADGES.length} entries</span></div>
 					</div>
-					<div className="relative cursor-grab overflow-hidden border-y border-foreground/10 py-8 active:cursor-grabbing" onMouseEnter={() => controls.stop()} onMouseLeave={resumeRail} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={handlePointerUp}>
+					<div className="relative cursor-grab overflow-hidden py-8 active:cursor-grabbing" onMouseEnter={() => controls.stop()} onMouseLeave={resumeRail} onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={handlePointerUp}>
+						<div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-600/60 to-transparent" />
+						<div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-600/60 to-transparent" />
 						<div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent" />
 						<div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent" />
 						<motion.div ref={railRef} animate={controls} className="flex w-max items-center gap-10 px-6">
