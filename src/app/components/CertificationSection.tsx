@@ -106,7 +106,6 @@ export function CertificationSection() {
 			id="certifications"
 			className="relative overflow-hidden border-y border-yellow-900/30 bg-background py-32"
 		>
-			<div className="absolute inset-0 hex-bg opacity-30" />
 			<div className="relative mx-auto max-w-6xl">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}

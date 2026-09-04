@@ -304,8 +304,6 @@ export function ProjectsSection() {
     <section id="projects" className="py-32 px-6 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-600 to-transparent opacity-60" />
 
-      <div className="absolute inset-0 pointer-events-none hex-bg opacity-50" />
-
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
