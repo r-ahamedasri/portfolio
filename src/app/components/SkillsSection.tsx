@@ -261,17 +261,9 @@ export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="py-32 px-6 bg-background relative overflow-hidden dedsec-slashes"
+      className="py-32 px-6 bg-background relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-600 to-transparent opacity-60" />
-
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(234,179,8,0.04) 0%, transparent 70%)",
-        }}
-      />
 
       <div className="max-w-6xl mx-auto" ref={sectionRef}>
         <motion.div

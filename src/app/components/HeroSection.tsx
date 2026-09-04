@@ -443,7 +443,7 @@ export function HeroSection() {
                   size={18}
                   className="group-hover:drop-shadow-[0_0_8px_rgba(234,179,8,0.9)] transition-all"
                 />
-                <span className="font-mono-tech text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <span className="hidden md:inline font-mono-tech text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   {label}
                 </span>
               </a>
@@ -457,7 +457,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 cursor-pointer"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2 cursor-pointer"
         onClick={() =>
           document
             .getElementById("skills")

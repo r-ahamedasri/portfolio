@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { HeroSection } from "./components/HeroSection";
 import { SkillsSection } from "./components/SkillsSection";
 import { ProjectsSection } from "./components/ProjectsSection";
+import { CertificationSection } from "./components/CertificationSection";
 import { EducationSection } from "./components/EducationSection";
 import { ContactSection } from "./components/ContactSection";
 import { NavBar } from "./components/NavBar";
@@ -30,6 +31,7 @@ export default function App() {
       <HeroSection />
       <SkillsSection />
       <ProjectsSection />
+      <CertificationSection />
       <EducationSection />
       <ContactSection />
     </div>

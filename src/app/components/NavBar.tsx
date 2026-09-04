@@ -7,6 +7,7 @@ const NAV_SECTIONS = [
   { id: "hero", label: "Home" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
+  { id: "certifications", label: "Certifications" },
   { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },
 ];
@@ -60,7 +61,7 @@ export function NavBar() {
         className={`fixed top-[2px] left-0 right-0 z-[100] transition-all duration-500 ${
           scrolled
             ? "bg-black/95 backdrop-blur-xl border-b border-yellow-900/50"
-            : "bg-transparent"
+            : "bg-black/70 backdrop-blur-md border-b border-yellow-900/30 md:bg-transparent md:backdrop-blur-0 md:border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
@@ -127,7 +128,8 @@ export function NavBar() {
             </button>
 
             <button
-              className="md:hidden text-gray-400 hover:text-yellow-400 transition-colors p-1"
+              aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+              className="md:hidden flex h-10 w-10 items-center justify-center border border-yellow-700/40 bg-black/40 text-gray-300 transition-colors hover:border-yellow-400 hover:text-yellow-400"
               onClick={() => setMenuOpen((v) => !v)}
             >
               {menuOpen ? <X size={22} /> : <Menu size={22} />}

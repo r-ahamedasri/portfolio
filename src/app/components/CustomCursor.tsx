@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
 export function CustomCursor() {
+  const isTouchDevice =
+    typeof window !== "undefined" &&
+    window.matchMedia("(pointer: coarse), (any-pointer: coarse)").matches;
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
   const pos = useRef({ x: 0, y: 0 });
@@ -11,6 +14,8 @@ export function CustomCursor() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    if (isTouchDevice) return;
+
     const onMove = (e: MouseEvent) => {
       pos.current = { x: e.clientX, y: e.clientY };
       if (!visible) setVisible(true);
@@ -53,9 +58,9 @@ export function CustomCursor() {
       document.removeEventListener("mouseenter", onEnter);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [visible]);
+  }, [isTouchDevice, visible]);
 
-  if (typeof window === "undefined") return null;
+  if (typeof window === "undefined" || isTouchDevice) return null;
 
   return (
     <>
