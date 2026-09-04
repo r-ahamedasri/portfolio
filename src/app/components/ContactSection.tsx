@@ -379,11 +379,9 @@ export function ContactSection() {
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="font-mono-tech text-xs text-foreground/30">
-                © 2026 Tristan James Sintos
+              <span className="font-mono-tech text-xs text-yellow-500">
+                © 2026 Ahamed Asri. <span className="text-foreground/30">All rights reserved.</span>
               </span>
-              <span className="font-mono-tech text-xs text-yellow-900">•</span>
-              <span className="font-mono-tech text-xs text-yellow-800">DedSec Operative</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-yellow-700 cursor-blink" />
