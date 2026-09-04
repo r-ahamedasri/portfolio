@@ -369,8 +369,8 @@ export function HeroSection() {
             className="flex flex-wrap gap-4 mb-12"
           >
             <a
-              href="/Asri_resume.pdf"
-              download="Asri_resume.pdf"
+              href="/Asri_Resume.pdf"
+              download="Asri_Resume.pdf"
               className="group relative font-rajdhani uppercase tracking-widest text-sm font-semibold px-8 py-3 text-black overflow-hidden clip-corner-tr"
               style={{
                 background:
