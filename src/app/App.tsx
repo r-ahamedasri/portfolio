@@ -7,6 +7,7 @@ import { EducationSection } from "./components/EducationSection";
 import { ContactSection } from "./components/ContactSection";
 import { NavBar } from "./components/NavBar";
 import { CustomCursor } from "./components/CustomCursor";
+import { ParticleCanvas } from "./components/ParticleCanvas";
 import { Analytics } from "@vercel/analytics/react";
 import logoSrc from "../imports/Logo.png";
 
@@ -29,6 +30,20 @@ export default function App() {
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       <Analytics />
       <CustomCursor />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 opacity-80"
+        style={{ top: "100vh" }}
+        aria-hidden="true"
+      >
+        <ParticleCanvas
+          count={50000}
+          connectionDistance={145}
+          repelRadius={90}
+          colorShift
+          sizeMultiplier={1.5}
+          colorScheme="blue"
+        />
+      </div>
       <NavBar />
       <HeroSection />
       <SkillsSection />

@@ -16,6 +16,8 @@ interface ParticleCanvasProps {
   connectionDistance?: number;
   repelRadius?: number;
   colorShift?: boolean;
+  sizeMultiplier?: number;
+  colorScheme?: "amber" | "silver";
 }
 
 export function ParticleCanvas({
@@ -24,6 +26,8 @@ export function ParticleCanvas({
   connectionDistance = 130,
   repelRadius = 120,
   colorShift = false,
+  sizeMultiplier = 1,
+  colorScheme = "amber",
 }: ParticleCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: -9999, y: -9999 });
@@ -46,7 +50,7 @@ export function ParticleCanvas({
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 1.5 + 0.5,
+        size: (Math.random() * 1.5 + 0.5) * sizeMultiplier,
         opacity: Math.random() * 0.4 + 0.15,
         hue: 45 + Math.random() * 20 - 10,
       }));
@@ -90,7 +94,9 @@ export function ParticleCanvas({
         const hue = colorShift ? p.hue + frameRef.current * 0.02 : p.hue;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${hue}, 90%, 55%, ${p.opacity})`;
+        ctx.fillStyle = colorScheme === "silver"
+          ? `rgba(203, 213, 225, ${p.opacity})`
+          : `hsla(${hue}, 90%, 55%, ${p.opacity})`;
         ctx.fill();
 
         for (let j = i + 1; j < pts.length; j++) {
@@ -103,7 +109,9 @@ export function ParticleCanvas({
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `hsla(${hue}, 80%, 55%, ${alpha})`;
+            ctx.strokeStyle = colorScheme === "silver"
+              ? `rgba(148, 163, 184, ${alpha})`
+              : `hsla(${hue}, 80%, 55%, ${alpha})`;
             ctx.lineWidth = 0.6;
             ctx.stroke();
           }
