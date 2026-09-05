@@ -40,7 +40,7 @@ export default function App() {
           connectionDistance={145}
           repelRadius={90}
           colorShift
-          sizeMultiplier={1.5}
+          sizeMultiplier={1}
           colorScheme="silver"
         />
       </div>
