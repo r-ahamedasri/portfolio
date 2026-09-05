@@ -41,7 +41,7 @@ export default function App() {
           repelRadius={90}
           colorShift
           sizeMultiplier={1.5}
-          colorScheme="blue"
+          colorScheme="silver"
         />
       </div>
       <NavBar />
