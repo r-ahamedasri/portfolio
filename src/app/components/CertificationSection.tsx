@@ -37,6 +37,24 @@ const CERTIFICATES: Certificate[] = [
 		issued: "July 2026",
 		url: "https://www.linkedin.com/learning/certificates/d077807610bb8275c9a6711b5983109e6933a465a9b3efdc85011c283ac2e7c0",
 	},
+    	{
+		id: "certificate-03",
+		kind: "certificate",
+		image: "/certifications/certificate-03.png",
+		issuer: "BCAS Campus",
+		title: "Information Technology",
+		issued: "September 2026",
+		url: "http://www.bcas.lk/bcvs/",
+	},
+    	{
+		id: "certificate-04",
+		kind: "certificate",
+		image: "/certifications/certificate-04.png",
+		issuer: "BCAS Campus",
+		title: "English",
+		issued: "September 2026",
+		url: "http://www.bcas.lk/bcvs/",
+	},
 ];
 
 const BADGE_IMAGES = [
@@ -56,8 +74,8 @@ const BADGES: Badge[] = BADGE_IMAGES.map((image, index) => ({
 function CertificateCard({ certificate }: { certificate: Certificate }) {
 	return (
 		<article className="grid gap-6 border border-foreground/15 bg-foreground/[0.03] p-5 lg:grid-cols-[180px_1fr] lg:p-6">
-			<div className="flex items-center justify-center overflow-hidden border border-yellow-700/50 bg-black/30">
-				<img src={certificate.image} alt={`${certificate.title} certificate`} className="block h-auto w-full object-contain" />
+			<div className="flex aspect-square items-center justify-center overflow-hidden border border-yellow-700/50 bg-black/30">
+				<img src={certificate.image} alt={`${certificate.title} certificate`} className="block h-full w-full object-contain p-2" />
 			</div>
 			<div>
 				<div>

@@ -98,8 +98,8 @@ function GlitchedTitle({ title }: { title: string }) {
       }, 35);
     };
 
-    const t = setTimeout(trigger, 400);
-    const iv = setInterval(trigger, 5000);
+    const t = setTimeout(trigger, 2000);
+    const iv = setInterval(trigger, 8000);
     return () => {
       clearTimeout(t);
       clearInterval(iv);
@@ -283,7 +283,7 @@ export function HeroSection() {
               }}
             />
             <span className="font-mono-tech text-yellow-500 text-sm uppercase tracking-widest">
-              // IDENTITY_VERIFIED :: USER_ACTIVE
+              // PORTFOLIO :: LIVE
             </span>
           </motion.div>
 

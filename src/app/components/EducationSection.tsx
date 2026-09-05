@@ -35,7 +35,7 @@ function useInViewOnce(
 
 const EDUCATION = [
   {
-    period: "2026 — Present",
+    period: "Jan 2026 — Present",
     degree: "Bachelor of Science in Computer Science",
     institution: "University of Westminster",
     description:
@@ -49,6 +49,21 @@ const EDUCATION = [
     ],
     icon: GraduationCap,
     status: "ENROLLED",
+    color: "#EAB308",
+  },
+  {
+    period: "Feb 2025 — Jun 2025",
+    degree: "Certificate in Information Technology and English",
+    institution: "BCAS Campus",
+    description: "Developed a strong foundation in information technology and English, building practical skills in computing, communication, and problem-solving.",
+    highlights: [
+      "Information Technology",
+      "Computer Fundamentals",
+      "English Language",
+      "Communication Skills"
+    ],
+    icon: GraduationCap,
+    status: "Completed",
     color: "#EAB308",
   },
   {
