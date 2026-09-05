@@ -1,10 +1,10 @@
 # Ahamed Asri — Portfolio
 
-A modern, interactive personal portfolio for **Ahamed Asri**, a Computer Science student focused on AI, cybersecurity, and software development.
+A modern, interactive personal portfolio for **Ahamed Asri**, a Computer Science student.
 
 Designed as a digital space to showcase projects, technical interests, skills, and experiments — with a strong focus on clean UI, smooth interactions, and a distinctive visual identity.
 
-🔗 **Live site:** https://www.ahamedasri.dev/
+🔗 **Live site:** <https://ahamedasri.dev>
 
 ---
 
@@ -51,9 +51,9 @@ This portfolio isn't built off a generic template — it's designed around a dis
 
 ## 📫 Contact
 
-- GitHub: [@r-ahamedasri](https://github.com/r-ahamedasri)
-- LinkedIn: [add your LinkedIn]
-- Email: [add your email]
+- GitHub: <https://github.com/r-ahamedasri>
+- LinkedIn: <https://linkedin.com/in/ahamedasri>
+- Email: <mailto:r.ahamedasri@gmail.com>
 
 ---
 
