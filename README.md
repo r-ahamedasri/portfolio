@@ -51,9 +51,9 @@ This portfolio isn't built off a generic template — it's designed around a dis
 
 ## 📫 Contact
 
-- GitHub: <https://github.com/r-ahamedasri>
-- LinkedIn: <https://linkedin.com/in/ahamedasri>
-- Email: <mailto:r.ahamedasri@gmail.com>
+- **GitHub:** [r-ahamedasri](https://github.com/r-ahamedasri)
+- **LinkedIn:** [ahamedasri](https://linkedin.com/in/ahamedasri)
+- **Email:** [r.ahamedasri@gmail.com](mailto:r.ahamedasri@gmail.com)
 
 ---
 
