@@ -19,41 +19,59 @@ interface Badge {
 }
 
 const CERTIFICATES: Certificate[] = [
-	{
+    	{
 		id: "certificate-01",
 		kind: "certificate",
 		image: "/certifications/certificate-01.png",
+		issuer: "BCAS Campus",
+		title: "Information Technology",
+		issued: "September 2025",
+		url: "http://www.bcas.lk/bcvs/",
+	},
+    	{
+		id: "certificate-02",
+		kind: "certificate",
+		image: "/certifications/certificate-02.png",
+		issuer: "BCAS Campus",
+		title: "English",
+		issued: "September 2025",
+		url: "http://www.bcas.lk/bcvs/",
+	},
+	{
+		id: "certificate-03",
+		kind: "certificate",
+		image: "/certifications/certificate-03.png",
+		issuer: "Information Institute of Technology",
+		title: "Foundation Certificate in Higher Education",
+		issued: "january 2026",
+		url: "#",
+	},
+	{
+		id: "certificate-04",
+		kind: "certificate",
+		image: "/certifications/certificate-04.png",
+		issuer: "Information Institute of Technology",
+		title: "English Communication Skills for IT",
+		issued: "July 2026",
+		url: "#",
+	},
+{
+		id: "certificate-05",
+		kind: "certificate",
+		image: "/certifications/certificate-05.png",
 		issuer: "freeCodeCamp",
 		title: "Python Developer Certification",
 		issued: "June 2026",
 		url: "https://www.freecodecamp.org/certification/ahamedasri/python-v9",
 	},
 	{
-		id: "certificate-02",
+		id: "certificate-06",
 		kind: "certificate",
-		image: "/certifications/certificate-02.png",
+		image: "/certifications/certificate-06.png",
 		issuer: "LinkedIn Learning",
 		title: "Learning Git and GitHub",
 		issued: "July 2026",
 		url: "https://www.linkedin.com/learning/certificates/d077807610bb8275c9a6711b5983109e6933a465a9b3efdc85011c283ac2e7c0",
-	},
-    	{
-		id: "certificate-03",
-		kind: "certificate",
-		image: "/certifications/certificate-03.png",
-		issuer: "BCAS Campus",
-		title: "Information Technology",
-		issued: "September 2026",
-		url: "http://www.bcas.lk/bcvs/",
-	},
-    	{
-		id: "certificate-04",
-		kind: "certificate",
-		image: "/certifications/certificate-04.png",
-		issuer: "BCAS Campus",
-		title: "English",
-		issued: "September 2026",
-		url: "http://www.bcas.lk/bcvs/",
 	},
 ];
 
@@ -63,6 +81,7 @@ const BADGE_IMAGES = [
 	"/certifications/badge-03.png",
 	"/certifications/badge-04.png",
 	"/certifications/badge-05.png",
+	"/certifications/badge-06.png",
 ];
 
 const BADGES: Badge[] = BADGE_IMAGES.map((image, index) => ({
