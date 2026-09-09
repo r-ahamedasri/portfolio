@@ -99,7 +99,7 @@ function GlitchedTitle({ title }: { title: string }) {
     };
 
     const t = setTimeout(trigger, 2000);
-    const iv = setInterval(trigger, 8000);
+    const iv = setInterval(trigger, 14000);
     return () => {
       clearTimeout(t);
       clearInterval(iv);
