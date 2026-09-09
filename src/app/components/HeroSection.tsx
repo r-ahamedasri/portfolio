@@ -13,9 +13,9 @@ const TITLE = "RILA AHAMED ASRI";
 const GLITCH_CHARS = "!@#$%^&*01アイウ▓░█DEDSEC";
 const ROLES = [
   "Information Security Engineer",
+  "AI Security Engineer",
   "Penetration Tester",
   "Cloud Security Engineer",
-  "Network Security Engineer",
 ];
 
 
