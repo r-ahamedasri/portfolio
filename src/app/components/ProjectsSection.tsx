@@ -39,6 +39,18 @@ const PROJECTS: Project[] = [
     type: "Multi-Agent AI",
     url: "https://github.com/r-ahamedasri/originai",
   },
+  {
+    index: "03",
+    title: "Shulker Box",
+    shortDesc: "Secure password and recovery-key manager.",
+    longDesc:
+      "A password and recovery-key manager that keeps everything encrypted and stored only on your own device — nothing is uploaded to a server, and no one but you can read your data. Includes a command-line tool for saving, viewing, and managing passwords, plus a backup recovery phrase so you're never locked out, even if you forget your master password.",
+    tech: ["Rust", "Encryption", "Cryptography", "CLI"],
+    icon: Code2,
+    status: "COMPLETED",
+    type: "Security Tool",
+    url: "https://github.com/r-ahamedasri/ShulkerBox",
+  },
 ];
 
 function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
