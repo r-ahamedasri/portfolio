@@ -82,6 +82,8 @@ const BADGE_IMAGES = [
 	"/certifications/badge-04.png",
 	"/certifications/badge-05.png",
 	"/certifications/badge-06.png",
+	"/certifications/badge-07.png",
+	"/certifications/badge-08.png"
 ];
 
 const BADGES: Badge[] = BADGE_IMAGES.map((image, index) => ({
