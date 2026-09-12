@@ -60,7 +60,7 @@ const CERTIFICATES: Certificate[] = [
 		kind: "certificate",
 		image: "/certifications/certificate-05.png",
 		issuer: "freeCodeCamp",
-		title: "Python Developer Certification",
+		title: "Python Developer",
 		issued: "June 2026",
 		url: "https://www.freecodecamp.org/certification/ahamedasri/python-v9",
 	},
