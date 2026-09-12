@@ -352,7 +352,7 @@ export function HeroSection() {
               {" "}
               BSc (Hons) Computer Science undergraduate at the
               University of Westminster, associated with the
-              Institute of Information Technology (IIT).
+              Informatics Institute of Technology (IIT).
             </span>
             <br />I build. I break. I learn. With a growing
             focus on cybersecurity, I explore development,
